@@ -1,6 +1,6 @@
 import Button from "../components/Button";
 import Card from "../components/Card";
-
+import Footer from "../components/Footer";
 function Home() {
   const paragraph: string = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
     magni, atque quod ratione fugiat ducimus dolorem placeat perferendis
@@ -23,6 +23,7 @@ function Home() {
         onClick={() => console.log("you clicked the button")}
         paragraph={paragraph}
       />
+      <Footer color='white' text='Footer' />
     </>
   );
 }
