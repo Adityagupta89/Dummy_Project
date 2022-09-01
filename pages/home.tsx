@@ -2,12 +2,12 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 
+const paragraph: string = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+magni, atque quod ratione fugiat ducimus dolorem placeat perferendis
+expedita`;
+
 function Home() {
   const theadData: string[] = ["Name", "Email", "Date"];
-
-  const paragraph: string = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-    magni, atque quod ratione fugiat ducimus dolorem placeat perferendis
-    expedita`;
 
   type bodyData = {
     id: string;
