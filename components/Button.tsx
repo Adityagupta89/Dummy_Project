@@ -5,6 +5,7 @@ const Button: React.FC<Props> = ({
   text,
   height,
   onClick,
+  fontSize,
   radius,
   width,
   color,
@@ -19,7 +20,7 @@ const Button: React.FC<Props> = ({
         color: color,
         width,
         cursor: "pointer",
-        fontSize: "1.4rem",
+        fontSize: fontSize,
       }}
     >
       {text}
@@ -33,6 +34,7 @@ interface Props {
   text: string;
   height: string;
   onClick: () => void;
+  fontSize: string;
   radius: string;
   width: string;
   color: string;
