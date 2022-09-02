@@ -15,6 +15,7 @@ const Button: React.FC<Props> = ({
       onClick={onClick}
       style={{
         backgroundColor: bcolor,
+        border: "1px solid",
         borderRadius: radius,
         height,
         color: color,

@@ -1,13 +1,11 @@
 import React from "react";
 
-const Table: React.FC<Props> = ({ thead, tdata }) => {
+const Table: React.FC<Props> = ({ thead, tdata, width, height }) => {
   return (
     <div
       style={{
-        height: "30vh",
-        width: "50vw",
-        border: "1px solid black",
-        margin: "auto",
+        height,
+        width,
       }}
     >
       <table style={{ width: "90%", margin: "10px auto", height: "30vh" }}>
@@ -40,4 +38,6 @@ type bodyData = {
 interface Props {
   thead: string[];
   tdata: bodyData[];
+  width: string;
+  height: string;
 }
