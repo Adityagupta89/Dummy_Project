@@ -1,12 +1,17 @@
 import React from "react";
 import classes from "../styles/Card.module.css";
 
-const Card: React.FC<Props> = ({ className, childern }) => {
-  return <div className={`${classes.card} ${className}`}>{childern}</div>;
+const Card: React.FC<Props> = ({ className, children }) => {
+  return (
+    <div className={`${classes.card} ${className}`}>
+      <>{children}</>
+    </div>
+  );
 };
-export default Card;
 
 interface Props {
-  childern: any;
+  children: JSX.Element | JSX.Element[];
   className: string;
 }
+
+export default Card;

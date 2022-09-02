@@ -1,15 +1,17 @@
 import React from "react";
 
-const Footer: React.FC<Props> = ({ text, color }) => {
+const Footer: React.FC<Props> = ({ color, children, className }) => {
   return (
-    <div className="layout-footer" style={{ color: color }}>
-      {text}
+    <div className={`layout-footer ${className}`} style={{ color: color }}>
+      {children}
     </div>
   );
 };
-export default Footer;
 
 interface Props {
-  text: string;
+  children: JSX.Element | JSX.Element[];
+  className: string;
   color: string;
 }
+
+export default Footer;

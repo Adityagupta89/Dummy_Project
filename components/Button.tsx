@@ -1,42 +1,18 @@
 import React from "react";
+import classes from "../styles/Button.module.css";
 
-const Button: React.FC<Props> = ({
-  bcolor,
-  text,
-  height,
-  onClick,
-  fontSize,
-  radius,
-  width,
-  color,
-}) => {
+const Button: React.FC<Props> = ({ children, className, onClick }) => {
   return (
-    <button
-      onClick={onClick}
-      style={{
-        backgroundColor: bcolor,
-        border: "1px solid",
-        borderRadius: radius,
-        height,
-        color: color,
-        width,
-        cursor: "pointer",
-        fontSize: fontSize,
-      }}
-    >
-      {text}
+    <button onClick={onClick} className={`${classes.btn} ${className}`}>
+      {children}
     </button>
   );
 };
-export default Button;
 
 interface Props {
-  bcolor: string;
-  text: string;
-  height: string;
+  children: string;
+  className?: string;
   onClick: () => void;
-  fontSize: string;
-  radius: string;
-  width: string;
-  color: string;
 }
+
+export default Button;

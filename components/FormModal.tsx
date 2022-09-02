@@ -1,17 +1,14 @@
 import React from "react";
-import Box from "@mui/material/Box";
 import Button from "./Button";
-import Modal from "@mui/material/Modal";
-import { Stack } from "@mui/material";
+import classes from "../styles/FormModal.module.css";
+import Card from "./Card";
 
 const FormModal: React.FC<Props> = ({
   children,
   btnText,
-  width,
-  height,
-  top,
-  left,
   onClick,
+  btnclass,
+  modalclass,
 }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -20,85 +17,39 @@ const FormModal: React.FC<Props> = ({
     onClick();
     setOpen(false);
   };
-  const style = {
-    position: "absolute",
-    top,
-    left,
-    transform: "translate(-50%, -50%)",
-    width,
-    height,
-    overflow: "scoll",
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
-  };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "flex-end",
-        marginRight: "2rem",
-      }}
-    >
-      <Button
-        text={btnText}
-        width="135px"
-        height="45px"
-        radius="5px"
-        bcolor="rgb(27, 131, 179)"
-        color="white"
-        fontSize="20px"
-        onClick={handleOpen}
-      />
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
+    <div>
+      <Button onClick={handleOpen} className={btnclass}>
+        {btnText}
+      </Button>
+      {open && <div className={classes.backdrop} />}
+      {open && (
+        <Card className={`${classes.modal} ${modalclass}`}>
           {children}
-          <Stack
-            flexDirection="row"
-            justifyContent="center"
-            style={{ width: "100%" }}
-          >
-            <Button
-              text="Cancel"
-              width="80px"
-              height="45px"
-              radius="5px"
-              fontSize="16px"
-              onClick={handleClose}
-              bcolor="rgb(27, 131, 179)"
-              color="white"
-            />
-            <Button
-              text="Sumbit"
-              width="80px"
-              height="45px"
-              radius="5px"
-              onClick={submitHanlder}
-              fontSize="16px"
-              bcolor="rgb(27, 131, 179)"
-              color="white"
-            />
-          </Stack>
-        </Box>
-      </Modal>
+          <div className={classes.btn}>
+            <div style={{ marginRight: "8px" }}>
+              <Button className={btnclass} onClick={handleClose}>
+                Cancel
+              </Button>
+            </div>
+           { onClick &&<Button className={btnclass} onClick={submitHanlder}>
+              Submit
+            </Button>}
+          </div>
+        </Card>
+      )}
     </div>
   );
 };
-export default FormModal;
 
 interface Props {
   children: JSX.Element;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  className?: string;
+  btnclass?: string;
+  modalclass?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   btnText: string;
-  width: string;
-  height: string;
-  left: string;
-  top: string;
 }
+
+export default FormModal;

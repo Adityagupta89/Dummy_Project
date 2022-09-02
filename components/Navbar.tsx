@@ -22,8 +22,9 @@ const Navbar: React.FC<Props> = ({ Nheads }) => {
     </nav>
   );
 };
-export default Navbar;
 
 interface Props {
   Nheads: string[];
 }
+
+export default Navbar;

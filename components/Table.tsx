@@ -1,14 +1,9 @@
 import React from "react";
 
-const Table: React.FC<Props> = ({ thead, tdata, width, height }) => {
+const Table: React.FC<Props> = ({ thead, tdata, className }) => {
   return (
-    <div
-      style={{
-        height,
-        width,
-      }}
-    >
-      <table style={{ width: "90%", margin: "10px auto", height: "30vh" }}>
+    <div className={className}>
+      <table className="content-table">
         <thead>
           <tr>
             {thead.map((head) => (
@@ -29,15 +24,16 @@ const Table: React.FC<Props> = ({ thead, tdata, width, height }) => {
     </div>
   );
 };
-export default Table;
 
 type bodyData = {
   id: string;
   items: string[];
 };
+
 interface Props {
   thead: string[];
   tdata: bodyData[];
-  width: string;
-  height: string;
+  className: string;
 }
+
+export default Table;

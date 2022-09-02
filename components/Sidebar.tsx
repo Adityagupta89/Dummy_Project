@@ -7,7 +7,7 @@ const Sidebar: React.FC<Props> = ({ Nheads }) => {
     <nav className={classes.header}>
       <ul className={classes.mainnav}>
         {Nheads.map((Nhead) => (
-          <Link href={`/${Nhead}`}>
+          <Link href={`/${Nhead.toLocaleLowerCase()}`}>
             <li className={classes.box}>
               <a>{Nhead}</a>
             </li>
@@ -17,8 +17,9 @@ const Sidebar: React.FC<Props> = ({ Nheads }) => {
     </nav>
   );
 };
-export default Sidebar;
 
 interface Props {
   Nheads: string[];
 }
+
+export default Sidebar;
