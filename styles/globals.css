@@ -13,6 +13,7 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +24,59 @@ a {
     color: white;
     background: black;
   }
+}
+
+.layout-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #264653;
+  color: #e9c46a;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+}
+* {
+  font-family: sans-serif; /* Change your font family */
+}
+
+.content-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 25px 0;
+  font-size: 1em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #7c7f84;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 20px 45px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  /* border-bottom: 2px solid #009879; */
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
 }
